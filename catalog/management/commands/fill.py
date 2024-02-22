@@ -12,23 +12,11 @@ def get_models(file):
         models_list = json.load(f)
     return models_list
 
+
 class Command(BaseCommand):
-
-    # @staticmethod
-    # def get_models(file):
-    #     cur_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-    #     path_to_file = os.path.join(cur_dir + "/fixtures/" + file)
-    #     with open(path_to_file, 'rb') as f:
-    #         models_list = json.load(f)
-    #     return models_list
-
 
     @staticmethod
     def json_read_categories(file):
-        # cur_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-        # path_to_file = os.path.join(cur_dir + "/fixtures/" + file)
-        # with open(path_to_file, 'rb') as f:
-        #     models = json.load(f)
         cat_list = [model for model in get_models(file) if model["model"] == "catalog.category"]
         return cat_list
 
@@ -36,10 +24,6 @@ class Command(BaseCommand):
 
     @staticmethod
     def json_read_products(file):
-        # cur_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-        # path_to_file = os.path.join(cur_dir + "/fixtures/" + file)
-        # with open(path_to_file, 'rb') as f:
-        #     models = json.load(f)
         prod_list = [model for model in get_models(file) if model["model"] == "catalog.product"]
         return prod_list
 
