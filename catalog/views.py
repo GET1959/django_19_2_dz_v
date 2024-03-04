@@ -45,6 +45,16 @@ def category(request):
     return render(request, 'base.html', context)
 
 
+# def category_item(request, pk):
+#     cat_item = Category.objects.get(pk=pk)
+#     context = {
+#         'object': Product.objects.filter(category_id=pk),
+#         'title': f'Категория {cat_item}',
+#     }
+#
+#     return render(request, 'catalog/categories.html', context)
+
+
 def beverages(request):
     context = {
         'object_list': Product.objects.filter(category=1)

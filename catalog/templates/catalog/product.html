@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
+{% load my_tags %}
 {% block content %}
     <div class="row">
         {% for object in object_list %}
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="/media/{{ object.image }}" alt="card image cap">
+<!--                <img class="card-img-top" src="/media/{{ object.image }}" alt="card image cap">-->
+                <img class="card-img-top" src="{{ object.image | mymedia }}" alt="card image cap">
                 <div class="card-body">
                     <h3 class="card-title">{{ object.name }}</h3>
                     <p>{{ object.description|slice:100 }}</p>

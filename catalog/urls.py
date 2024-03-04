@@ -1,5 +1,3 @@
-from django.conf import settings
-from django.conf.urls.static import static
 from django.urls import path
 
 from catalog.apps import CatalogConfig
@@ -8,7 +6,6 @@ from catalog.views import index, home, contacts, product, product_item, confecti
 #app_name = CatalogConfig
 
 urlpatterns = [
-    # path("", index, name='catalog'),
     path("", home, name="home"),
     path("contacts/", contacts, name="contacts"),
     path("product/", product, name="product"),
